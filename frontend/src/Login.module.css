@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #babec2;
+}
+  
+.loginBox {
+    background: white;
+    padding: 2rem 3rem 2em 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+  
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-left: 1.2rem;
+    margin-top: 0.1em;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-left: 1.5rem;
+}
+  
+.inputGroup {
+    margin-bottom: 1.25rem;
+}
+  
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; 
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+  
+  .input:focus {
+    outline: none;
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+}
+  
+.button {
+    width: 11.251cm;
+    padding: 0.75rem;
+    background-color: #3b82f6; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+  
+.button:hover {
+    background-color: #2563eb; 
+}
+  
+.button:active {
+    background-color: #1d4ed8; 
+}
