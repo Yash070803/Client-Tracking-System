@@ -52,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "Backend.urls"
@@ -71,6 +73,16 @@ TEMPLATES = [
         },
     },
 ]
+
+# CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://192.168.1.136:3000",
+]
+
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'DELETE']
 
 WSGI_APPLICATION = "Backend.wsgi.application"
 
