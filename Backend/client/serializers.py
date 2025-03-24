@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Client
 
-class LimitedDataSerializers(serializers.ModelSerializer):
+class LimitedDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = ['id', 'name_of_client', 'registered_date', 'address'] #for regular users
