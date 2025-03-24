@@ -1,0 +1,105 @@
+.container {
+    padding: 2rem;
+    background-color: #f4f7fa;
+    min-height: 100vh;
+    text-decoration: none;
+}
+
+.header {
+    display: flexbox;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-left: auto;
+}
+
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 5rem;
+}
+
+.logout {
+    padding: 0.5em 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    background-color: #ef4444;
+    float: right;
+}
+
+.logout:hover {
+    background-color: #dc2626;
+}
+
+.addClient {
+    padding: 0.5em 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    background-color: #10b981;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center
+}
+
+.addClient:hover {
+    background-color: #03885e;
+}
+
+
+.tableWrapper {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0, 1);
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 1 rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #333;
+}
+
+.table th {
+    background-color: #f9fafb;
+    font-weight: 650;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.table td {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.editLink {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.editLink:hover {
+    color: #2563eb;
+}
