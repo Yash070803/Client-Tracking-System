@@ -1,0 +1,39 @@
+pip install psycopg2
+pip install django-postgres-extra
+sudo apt update
+sudo apt install -y curl gnupg
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /usr/share/keyrings/postgresql-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/postgresql-keyring.gpg] http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+sudo apt update
+sudo apt install -y postgresql-15 postgresql-client-15
+psql --version
+sudo service postgresql start
+sudo service postgressql status
+psql -U postgres -h localhost -p 5432
+sudo nano /etc/postgresql/15/main/pg_hba.conf
+
+Modify the following lines:
+Change: local all postgres peer to local all postgres trust.
+
+Change: host all all 127.0.0.1/32 scram-sha-256 to host all all 127.0.0.1/32 trust.
+
+Change: host all all ::1/128 scram-sha-256 to host all all ::1/128 trust.
+
+sudo service postgresql reload 15
+
+psql -U postgres
+
+ALTER USER postgres WITH PASSWORD 'Root';
+
+\q
+
+Modify the following lines:
+Change: local all postgres trust to local all postgres peer.
+
+Change: host all all 127.0.0.1/32 scram-sha-256 <- host all all 127.0.0.1/32 trust.
+
+Change: host all all ::1/128 scram-sha-256 <- host all all ::1/128 trust.
+
+sudo service postgresql reload 15
+
+psql -U postgres
