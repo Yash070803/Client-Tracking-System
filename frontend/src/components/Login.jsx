@@ -6,6 +6,7 @@ import styles from './Login.module.css';
 const Login = ({ setAuth }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // state for error messaging
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,7 +17,7 @@ const Login = ({ setAuth }) => {
       localStorage.setItem('access_token', res.data.access);
       setAuth(true);
       navigate('/clients');
-    } catch (error) {alert('Login failed. Check credentials.');}
+    } catch (error) {setError('Invalid credentials');} //set error message on failure
   };
 
   return (
@@ -41,6 +42,7 @@ const Login = ({ setAuth }) => {
           />
         </div>
         <button className={styles.button} onClick={handleLogin}>Login</button>
+        {error && <span className={styles.error}>{error}</span>}
       </div>
     </div>
   );

@@ -75,3 +75,12 @@
 .button:active {
     background-color: #1d4ed8; 
 }
+
+.error {
+    color: #dc2626; /* Red */
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: center;
+    margin-left: 2em;
+}
