@@ -103,3 +103,73 @@
 .editLink:hover {
     color: #2563eb;
 }
+
+/* adding modal-specific styles below */
+
+.inputGroup {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.input[type="textarea"] {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.saveButton {
+    padding: 0.75rem 1.75rem;
+    background-color: #3b82f6;
+    /* Blue, matching edit links */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.saveButton:hover {
+    background-color: #2563eb;
+}
+
+.cancelButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #6b7280;
+    /* Gray for cancel */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+    background-color: #4b5563;
+}
