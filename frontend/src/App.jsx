@@ -3,9 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import Login from './components/Login';
-import List from './components/List'
-import Edit from './components/Edit';
-import Create from './components/Create';
+import List from './components/List';
 import axios from 'axios';
 
 const App = () => {
@@ -32,14 +30,14 @@ const App = () => {
     }
   });
 
-  const AdminRoute = ({ children }) => {
-    console.log('AdminRoute check - isAdmin:', isAdmin);  //
-    return isAdmin ? children : <Navigate to="/clients" />;
-  };
+  // const AdminRoute = ({ children }) => {
+  //   console.log('AdminRoute check - isAdmin:', isAdmin);  //
+  //   return isAdmin ? children : <Navigate to="/clients" />;
+  // };
 
   // Wait for isAdmin to be determined before rendering protected routes
   if(isAuthenticated && isAdmin===null){ // Prevent premature rendering
-    return <div>Loading..</div>
+    return <div>Loading...</div>
   }
 
   return (
@@ -53,15 +51,7 @@ const App = () => {
           path="/clients"
           element={isAuthenticated ? <List isAdmin={isAdmin} /> : <Navigate to="/login" />}
         />
-        <Route
-          path="/clients/:id/edit"
-          element={ isAuthenticated ? ( <AdminRoute> <Edit /> </AdminRoute> ) : ( <Navigate to="/login" />) }
-        />
         <Route path="*" element={<Navigate to="/login" />} />
-        <Route
-          path="/clients/create"
-          element={ isAuthenticated ? ( <AdminRoute> <Create /> </AdminRoute>) : ( <Navigate to="/login" /> )}
-        />
       </Routes>
     </BrowserRouter>
   );
